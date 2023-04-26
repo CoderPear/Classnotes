@@ -21,10 +21,10 @@ public class Ch4{
 			}
 		}
 		return false;*/
-		if (searchFor>=start & searchFor<=end){
+		/*if (searchFor>=start & searchFor<=end){
 		return true;
 		}
-		return false;
+		return false;*/
 	if (searchFor < start || searchFor > end){
 		return false;
 		}
