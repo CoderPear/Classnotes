@@ -3,28 +3,39 @@ public class Ch4{
 
 	public static void main(String[]args){
 		//System.out.println(filter("      Hello   there person   ", ' '));
-		for (int i=55;i<110;i+=10){
+		//for (int i=55;i<110;i+=10){
 			//System.out.println(letterGrade3(i));
+		//}
 			System.out.println(isInInterval('m', 'a','z'));
 			System.out.println(isInInterval('a', 'm','z'));
 			System.out.println(isInInterval('z', 'a','m'));
-		}
+		
 	}
 	public static boolean isInInterval(char searchFor,char start,char end){
+		if(end<start){
+			throw new IllegalArgumentException("Start Must Be Less Than Start");
+		}
 	/*if (searchFor>start){
 			if(searchFor<end){
 				return true;
 			}
 		}
-	
-	return false;*/
-	if (searchFor<start){
+		return false;*/
+		if (searchFor>=start & searchFor<=end){
+		return true;
+		}
+		return false;
+	if (searchFor < start || searchFor > end){
+		return false;
+		}
+		return true;
+	/*if (searchFor<start){
 		return false;
 		}
 		if (searchFor>end){
 			return false;
 		}
-		return true;
+		return true;*/
 	}
 	public static String filter(String x, char y){
 		String filtered="";
