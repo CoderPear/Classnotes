@@ -1,5 +1,5 @@
+import java.util.*;
 public class Ch4{
-
 
 	public static void main(String[]args){
 		//System.out.println(filter("      Hello   there person   ", ' '));
@@ -8,8 +8,39 @@ public class Ch4{
 		//}
 			System.out.println(isInInterval('m', 'a','z'));
 			System.out.println(isInInterval('a', 'm','z'));
-			System.out.println(isInInterval('z', 'a','m'));
+			//System.out.println(isInInterval('z', 'a','m'));
+		String str= null;
+		example("hello");
+		example("");
+		//example(null);
 		
+		Scanner console=new Scanner(System.in);
+			int max= maxValue(console);
+			System.out.println("Max = "+ max);
+	}
+	public static int maxValue(Scanner scan){
+		System.out.print("Enter number of Numbers ++>");
+		int n= scan.nextInt();
+		int max=Integer.MIN_VALUE;
+		if(max<=0){
+			throw new IllegalArgumentException("Number of Numbers must be positive!");
+		}
+		for(int i=0; i<n;i++){
+				int temp= scan.nextInt();
+				if (temp >max){
+					max= temp;
+				}
+			}
+		return max;
+	}
+	public static Exception example(String str) throws IllegalArgumentException{
+		if(str==null){
+			throw new IllegalArgumentException("String Must Exist");
+			//throw new Exception("String Must Exist");* More complicated
+			}
+			System.out.println(str.length());
+			Exception e= new Exception();
+			return e;
 	}
 	public static boolean isInInterval(char searchFor,char start,char end){
 		if(end<start){
@@ -21,15 +52,16 @@ public class Ch4{
 			}
 		}
 		return false;*/
-		/*if (searchFor>=start & searchFor<=end){
-		return true;
-		}
-		return false;*/
-	if (searchFor < start || searchFor > end){
+		return !(searchFor< start|| searchFor>end);//opt 6 logical or
+		//if (searchFor>=start & searchFor<=end){ //using logical and
+		//return true;
+		//}
+		//return searchFor>=start & searchFor<=end;
+	/*if (searchFor < start || searchFor > end){ //use logical or
 		return false;
 		}
-		return true;
-	/*if (searchFor<start){
+		return true;*/
+	/*if (searchFor<start){ //use indy ids
 		return false;
 		}
 		if (searchFor>end){
