@@ -1,12 +1,10 @@
 import java.util.*;
 public class longestName{
-	//uses a scanner to get names and 
+	
+		
 	public static void main(String[]args){
-		int a = console.next();
-		int b = console.next();
-		range(a,b);
+		longestName(console,4)
 	}
-	public static void longestName(String a){
-	}
-
+	public static void quadrant(console, int names){
+		
 }
